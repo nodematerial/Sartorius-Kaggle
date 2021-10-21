@@ -46,4 +46,4 @@ data = dict(
         ann_file=data_root + 'test.pkl',
         img_prefix=data_root + 'test/',
         pipeline=test_pipeline))
-evaluation = dict(metric=['segm']) #bbox
+evaluation = dict(metric=['bbox']) #bbox
