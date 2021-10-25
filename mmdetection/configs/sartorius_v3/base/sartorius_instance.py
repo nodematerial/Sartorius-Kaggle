@@ -1,5 +1,6 @@
 # dataset settings
 dataset_type = 'CocoDataset'
+classes = ('True',) # Added
 data_root = '../work/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -35,15 +36,18 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'train.json',
         img_prefix=data_root + 'train/',
+        classes=classes, # Added
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'val.json',
         img_prefix=data_root + 'train/',
+        classes=classes, # Added
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'test.json',
         img_prefix=data_root + 'test/',
+        classes=classes, # Added
         pipeline=test_pipeline))
 evaluation = dict(metric=['bbox', 'segm']) 
